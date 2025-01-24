@@ -2,9 +2,7 @@ package student;
 
 /**
  * This class is a place holder which you will fully implement based on the javadoc
- * 
  * https://cs5004-khoury-lionelle.github.io/hello_world/student/package-summary.html
- * 
  */
 public class Greeting {
     /** The ID of the locality. */
@@ -119,8 +117,9 @@ public class Greeting {
      * @return a formatted string representation
      */
     public String toString() {
-        return String.format("{localityID:%d, localityName:\"%s\", " +
-                            "asciiGreeting:\"%s\", unicodeGreeting:\"%s\"}",
+        return String.format("{localityID:%d, localityName:\"%s\", "
+                        + "asciiGreeting:\"%s\","
+                        + "unicodeGreeting:\"%s\"}",
                     localityID, localityName, asciiGreeting, unicodeGreeting);
     }
 }
