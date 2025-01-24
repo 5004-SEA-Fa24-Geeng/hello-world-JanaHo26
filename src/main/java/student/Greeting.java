@@ -86,7 +86,7 @@ public class Greeting {
      * @return the format greeting
      */
     public String getFormatStr() {
-        return this.formatStr;
+        return String.format(formatStr, asciiGreeting);
     }
 
     /**
