@@ -90,14 +90,15 @@ public class Greeting {
      * @return the format string
      */
     public String getFormatStr() {
-        return String. format(formatStr, unicodeGreeting);
+        return String.format(formatStr, unicodeGreeting);
+    }
 
     /**
      * Returns the format string with specified encoding.
      * @param useUnicode whether to use Unicde encoding
      * @return the format string
      */
-    public String getFormatStr(boolean asiiOnly) {
+    public String getFormatStr(boolean asciiOnly) {
         if (asciiOnly) {
             return String.format(formatStr, asciiGreeting);
         }
