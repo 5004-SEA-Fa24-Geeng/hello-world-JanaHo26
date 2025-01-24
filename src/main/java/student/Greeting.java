@@ -7,14 +7,19 @@ package student;
  * 
  */
 public class Greeting {
+    /** The ID of the locality. */
     private int localityID;
+    /** The name of the locality. */
     private String localityName;
+    /** The ASCII representationof the greeting. */
     private String asciiGreeting;
+    /** The Unicode represnetation of the greeting. */
     private String unicodeGreeting;
+    /** The format string for the greeeting. */
     private String formatStr;
 
     /**
-     * The basic English greeting for given locality
+     * The basic English greeting for given locality.
      * @param localityID ID of the locality
      * @param localityName name of the locality
      */
@@ -33,7 +38,7 @@ public class Greeting {
     }
 
     /**
-     * Customized greeting
+     * Customized greeting.
      * @param localityID ID of the locality
      * @param localityName name of the locality
      * @param asciiGreeting ascii version of greetin g
@@ -50,7 +55,7 @@ public class Greeting {
     }
 
     /**
-     * Get the locality ID
+     * Get the locality ID.
      * @return the locality ID
      */
     public int getLocalityID() {
@@ -58,7 +63,7 @@ public class Greeting {
     }
 
     /**
-     * Get the locality name
+     * Get the locality name.
      * @return the locality name
      */
     public String getLocalityName() {
@@ -66,7 +71,7 @@ public class Greeting {
     }
 
     /**
-     * get the ascii version of greeting
+     * get the ascii version of greeting.
      * @return the ascii version of greeting
      */
     public String getAsciiGreeting() {
@@ -74,7 +79,7 @@ public class Greeting {
     }
 
     /**
-     * get the unicode version of greeting
+     * get the unicode version of greeting.
      * @return the unicode version of greeting
      */
     public String getUnicodeGreeting() {
@@ -82,39 +87,35 @@ public class Greeting {
     }
 
     /**
-     * get the format greeting
-     * @return the format greeting
+     * Returns the Unicode greeting.
+     * @param unused unused parameter
+     * @return the Unicode greeting
      */
-    //public String getFormatStr() {
-        //return String.format(formatStr, asciiGreeting);
-    //}
-
-    /**
-     * Return greeting with either ascii or unicode
-     * @return formatted greeting string
-     */
-    //public String getGreeting(boolean useAscii) {
-        //if (useAscii) {
-            //return String.format(formatStr, asciiGreeting);
-        //}
-        //return String.format(formatStr, unicodeGreeting);
-    //}
-
     public String getUnicodeGreeting(boolean unused) {
         return unicodeGreeting;
     }
 
+    /**
+     * Returns the format string.
+     * @return the format string
+     */
     public String getFormatStr() {
         return asciiGreeting + ", %s!";
     }
 
+    /**
+     * Returns the format string with specified encoding.
+     * @param useUnicode whether to use Unicde encoding
+     * @return the format string
+     */
     public String getFormatStr(boolean useUnicode) {
-        return useUnicode ? "%s, " + unicodeGreeting + "!" :
-                "%s, " + asciiGreeting + "!";
+        return useUnicode
+                ? "%s, " + unicodeGreeting + "!"
+                : "%s, " + asciiGreeting + "!";
     }
 
     /**
-     * Return a string representation everything
+     * Return a string representation everything.
      * @return a formatted string representation
      */
     public String toString() {
