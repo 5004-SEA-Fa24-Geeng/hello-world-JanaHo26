@@ -68,8 +68,7 @@ public class GreetingTest {
     public void testGetUnicodeGreeting() {
     assertEquals("Hello", usa.getUnicodeGreeting());
     assertEquals("Aloha", hawaii.getUnicodeGreeting());
-    assertEquals("你好", china.getUnicodeGreeting()); // only changes for this one, but worth
-    checking
+    assertEquals("你好", china.getUnicodeGreeting(True)); // only changes for this one, but worth checking
     }
 
     /**
@@ -104,7 +103,7 @@ public class GreetingTest {
     public void testGreet() {
     assertEquals("Hello, John!", String.format(usa.getFormatStr(),"John"));
     assertEquals("Aloha, John!", String.format(hawaii.getFormatStr(), "John"));
-    assertEquals("John, 你好!", String.format(china.getFormatStr(), "John"));
+    assertEquals("John, 你好!", String.format(china.getFormatStr(True), "John"));
     assertEquals("John, Ni Hao!", String.format(china.getFormatStr(), "John"));
     }
 
