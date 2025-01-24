@@ -95,14 +95,13 @@ public class Greeting {
 
     /**
      * Returns the format string with specified encoding.
-     * @param useUnicode whether to use Unicde encoding
+     * @param asciiOnly whether to use ASCII encoding
      * @return the format string
      */
     public String getFormatStr(boolean asciiOnly) {
         if (asciiOnly) {
             return String.format(formatStr, asciiGreeting);
-        }
-        else{
+        } else{
             return String.format(formatStr, unicodeGreeting);
         }
     }

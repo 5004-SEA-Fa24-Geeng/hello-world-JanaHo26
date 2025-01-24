@@ -27,7 +27,7 @@ public class GreetingTest {
     public void setUp() {
     usa = new Greeting(2, "USA");
     hawaii = new Greeting(1, "Hawaii", "Aloha");
-    china = new Greeting(3, "China", "Ni Hao", "你好", "%s, %s!");
+    china = new Greeting(3, "China", "Ni Hao", "你好", "%%s, %s!");
     }
 
 
@@ -68,7 +68,7 @@ public class GreetingTest {
     public void testGetUnicodeGreeting() {
     assertEquals("Hello", usa.getUnicodeGreeting());
     assertEquals("Aloha", hawaii.getUnicodeGreeting());
-    assertEquals("你好", china.getUnicodeGreeting(true)); // only changes for this one, but worth checking
+    assertEquals("你好", china.getUnicodeGreeting()); // only changes for this one, but worth checking
     }
 
     /**
@@ -78,7 +78,7 @@ public class GreetingTest {
     public void testGetFormatStr() {
     System.out.println(china.getFormatStr());
     assertEquals("%s, 你好!", china.getFormatStr());
-    assertEquals("%s, Ni Hao!", china.getFormatStr());
+    assertEquals("%s, Ni Hao!", china.getFormatStr(true));
     assertEquals("Hello, %s!", usa.getFormatStr());
     assertEquals("Aloha, %s!", hawaii.getFormatStr());
     }
@@ -89,10 +89,8 @@ public class GreetingTest {
     @Test
     public void testToString() {
     assertEquals("{localityID:2, localityName:\"USA\", asciiGreeting:\"Hello\", " + "unicodeGreeting:\"Hello\"}", usa.toString());
-    assertEquals("{localityID:1, localityName:\"Hawaii\", asciiGreeting:\"Aloha\", " +
-            "unicodeGreeting:\"Aloha\"}", hawaii.toString());
-    assertEquals("{localityID:3, localityName:\"China\", asciiGreeting:\"Ni Hao\", " +
-            "unicodeGreeting:\"你好\"}", china.toString());
+    assertEquals("{localityID:1, localityName:\"Hawaii\", asciiGreeting:\"Aloha\", " + "unicodeGreeting:\"Aloha\"}", hawaii.toString());
+    assertEquals("{localityID:3, localityName:\"China\", asciiGreeting:\"Ni Hao\", " + "unicodeGreeting:\"你好\"}", china.toString());
     }
 
     /**
@@ -102,8 +100,8 @@ public class GreetingTest {
     public void testGreet() {
     assertEquals("Hello, John!", String.format(usa.getFormatStr(),"John"));
     assertEquals("Aloha, John!", String.format(hawaii.getFormatStr(), "John"));
-    assertEquals("John, 你好!", String.format(china.getFormatStr(true), "John"));
-    assertEquals("John, Ni Hao!", String.format(china.getFormatStr(), "John"));
+    assertEquals("John, 你好!", String.format(china.getFormatStr(), "John"));
+    assertEquals("John, Ni Hao!", String.format(china.getFormatStr(true), "John"));
     }
 
 }
