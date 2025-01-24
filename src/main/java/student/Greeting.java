@@ -22,7 +22,7 @@ public class Greeting {
      * @param localityName name of the locality
      */
     public Greeting(int localityID, String localityName) {
-        this(localityID, localityName, "Hello");
+        this(localityID, localityName, "Hello", "Hello", "%s, %%s!");
     }
 
     /**
@@ -32,7 +32,7 @@ public class Greeting {
      * @param greeting greeting text to use for ascii greeting and unicode greeting
      */
     public Greeting(int localityID, String localityName, String greeting) {
-        this(localityID, localityName, greeting, greeting, "%s, %%s!");
+        this(localityID, localityName, greeting, greeting, "%s, %s!");
     }
 
     /**
@@ -84,37 +84,26 @@ public class Greeting {
         return this.unicodeGreeting;
     }
 
-    /**
-     * Returns the Unicode greeting.
-     * @param unused unused parameter
-     * @return the Unicode greeting
-     */
-    public String getUnicodeGreeting(boolean unused) {
-        return unicodeGreeting;
-    }
 
     /**
      * Returns the format string.
      * @return the format string
      */
     public String getFormatStr() {
-        if (formatStr.equals("%s, %%s!")) {
-            return "%s, " + asciiGreeting + "!";
-        }
-        return formatStr;
-    }
+        return String. format(formatStr, unicodeGreeting);
 
     /**
      * Returns the format string with specified encoding.
      * @param useUnicode whether to use Unicde encoding
      * @return the format string
      */
-    public String getFormatStr(boolean useUnicode) {
-        if (formatStr.equals("%s, %%s!")) {
-            String greeting = useUnicode ? unicodeGreeting : asciiGreeting;
-            return "%s, " + greeting + "!";
+    public String getFormatStr(boolean asiiOnly) {
+        if (asciiOnly) {
+            return String.format(formatStr, asciiGreeting);
         }
-        return formatStr;
+        else{
+            return String.format(formatStr, unicodeGreeting);
+        }
     }
 
     /**
