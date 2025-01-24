@@ -90,7 +90,7 @@ public class Greeting {
      * @return the format string
      */
     public String getFormatStr() {
-        return String.format(formatStr, unicodeGreeting);
+        return String.format(this.formatStr, this.unicodeGreeting);
     }
 
     /**
@@ -100,9 +100,9 @@ public class Greeting {
      */
     public String getFormatStr(boolean asciiOnly) {
         if (asciiOnly) {
-            return String.format(formatStr, asciiGreeting);
+            return String.format(this.formatStr, this.asciiGreeting);
         } else{
-            return String.format(formatStr, unicodeGreeting);
+            return String.format(this.formatStr, this.unicodeGreeting);
         }
     }
 
