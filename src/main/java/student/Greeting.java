@@ -113,7 +113,7 @@ public class Greeting {
     @Override
     public String toString() {
         return String.format("{localityID:%d, localityName:\"%s\", "
-                        + "asciiGreeting:\"%s\","
+                        + "asciiGreeting:\"%s\", "
                         + "unicodeGreeting:\"%s\"}",
                     localityID, localityName, asciiGreeting, unicodeGreeting);
     }
