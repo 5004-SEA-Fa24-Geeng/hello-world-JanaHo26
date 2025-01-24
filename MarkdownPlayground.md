@@ -21,3 +21,74 @@ Mermaid is a markdown language that allows you to create diagrams. You can find 
 
 <!-- start your playground code under this dashed line -->
 ----
+# Headings
+
+## This is the biggest Jana Ho
+
+### This is the medium Jana Ho
+
+#### This is the smallest Jana Ho
+
+----
+# Bold
+
+My name is **Jana Ho**.
+
+My **Jana Ho** is __bold text__.
+
+----
+# Italic
+
+My favorite music is *Ghost* from _Justin Bieber_.
+
+I was born in *2002*.
+
+----
+# Mermaid Class Diagram
+
+```mermaid
+---
+title: Aloha World UML
+---
+classDiagram
+    direction LR
+    AlohaWorld --> ConsoleView : Users
+    AlohaWorld --> Greeter
+    ConsoleView --> Greeter : Users
+    class AlohaWorld {
+        +main(String[] args) : void
+    }
+    class ConsoleView {
+        -List~String~ LOCALITY_OPTIONS
+        +getName() : String
+        +getLocality() : int
+        +checkRunAgain() : boolean
+        +printGreeting(String greeting) : void
+    }
+    class Greeter {
+        -String name
+        -int locality
+        -List~String~ localityList
+        -int HAWAII
+        -int CHINA
+        -int ITALY
+        -int DEFAULT_LOCALITY
+        +Greeter(String name)
+        +Greeter(String name, int locality)
+        +getName() : String
+        +getLocality() : int
+        +setLocality(int locality) : void
+        +greet() : String
+        +greet(boolean asciiOnly) : String
+        -getLocalityString() : String
+        +hashCode() : int
+        +equals(Object obj) : boolean
+        +toString() : String
+        +getLocalityList() : List~String~
+    }
+
+
+
+
+
+
