@@ -22,7 +22,7 @@ public class Greeting {
      * @param localityName name of the locality
      */
     public Greeting(int localityID, String localityName) {
-        this(localityID, localityName, "Hello", "Hello", "%s, %s!");
+        this(localityID, localityName, "Hello");
     }
 
     /**
@@ -32,7 +32,7 @@ public class Greeting {
      * @param greeting greeting text to use for ascii greeting and unicode greeting
      */
     public Greeting(int localityID, String localityName, String greeting) {
-        this(localityID, localityName, greeting, greeting, "%s, %s!");
+        this(localityID, localityName, greeting, greeting, "%s, %%s!");
     }
 
     /**
