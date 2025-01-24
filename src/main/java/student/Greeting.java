@@ -85,19 +85,32 @@ public class Greeting {
      * get the format greeting
      * @return the format greeting
      */
-    public String getFormatStr() {
-        return String.format(formatStr, asciiGreeting);
-    }
+    //public String getFormatStr() {
+        //return String.format(formatStr, asciiGreeting);
+    //}
 
     /**
      * Return greeting with either ascii or unicode
      * @return formatted greeting string
      */
-    public String getGreeting(boolean useAscii) {
-        if (useAscii) {
-            return String.format(formatStr, asciiGreeting);
-        }
-        return String.format(formatStr, unicodeGreeting);
+    //public String getGreeting(boolean useAscii) {
+        //if (useAscii) {
+            //return String.format(formatStr, asciiGreeting);
+        //}
+        //return String.format(formatStr, unicodeGreeting);
+    //}
+
+    public String getUnicodeGreeting(boolean unused) {
+        return unicodeGreeting;
+    }
+
+    public String getFormatStr() {
+        return asciiGreeting + ", %s!";
+    }
+
+    public String getFormatStr(boolean useUnicode) {
+        return useUnicode ? "%s, " + unicodeGreeting + "!" :
+                "%s, " + asciiGreeting + "!";
     }
 
     /**
