@@ -98,6 +98,9 @@ public class Greeting {
      * @return the format string
      */
     public String getFormatStr() {
+        if (formatStr.equals("%s, %%s!")) {
+            return "%s, " + asciiGreeting + "!";
+        }
         return formatStr;
     }
 
@@ -108,7 +111,8 @@ public class Greeting {
      */
     public String getFormatStr(boolean useUnicode) {
         if (formatStr.equals("%s, %%s!")) {
-            return useUnicode ? "%s, " + unicodeGreeting + "!" : "%s, " + asciiGreeting + "!";
+            String greeting = useUnicode ? unicodeGreeting : asciiGreeting;
+            return "%s, " + greeting + "!";
         }
         return formatStr;
     }
