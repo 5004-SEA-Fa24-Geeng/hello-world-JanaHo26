@@ -59,7 +59,7 @@ classDiagram
         +main(String[] args) : void
     }
     class ConsoleView {
-        -List~String~ LOCALITY_OPTIONS
+        -List<String> LOCALITY_OPTIONS
         +getName() : String
         +getLocality() : int
         +checkRunAgain() : boolean
@@ -68,7 +68,7 @@ classDiagram
     class Greeter {
         -String name
         -int locality
-        -List~String~ localityList
+        -List<String> localityList
         -int HAWAII
         -int CHINA
         -int ITALY
@@ -84,7 +84,7 @@ classDiagram
         +hashCode() : int
         +equals(Object obj) : boolean
         +toString() : String
-        +getLocalityList() : List~String~
+        +getLocalityList() : List<String>
     }
 
 
