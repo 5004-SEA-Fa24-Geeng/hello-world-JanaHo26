@@ -85,7 +85,7 @@ public class Greeting {
      * get the format greeting
      * @return the format greeting
      */
-    public String getFormatStr(boolean condition) {
+    public String getFormatStr() {
         return this.formatStr;
     }
 

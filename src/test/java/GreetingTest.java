@@ -79,7 +79,7 @@ public class GreetingTest {
     public void testGetFormatStr() {
     System.out.println(china.getFormatStr());
     assertEquals("%s, 你好!", china.getFormatStr());
-    assertEquals("%s, Ni Hao!", china.getFormatStr(True));
+    assertEquals("%s, Ni Hao!", china.getFormatStr());
     assertEquals("Hello, %s!", usa.getFormatStr());
     assertEquals("Aloha, %s!", hawaii.getFormatStr());
     }
@@ -105,7 +105,7 @@ public class GreetingTest {
     assertEquals("Hello, John!", String.format(usa.getFormatStr(),"John"));
     assertEquals("Aloha, John!", String.format(hawaii.getFormatStr(), "John"));
     assertEquals("John, 你好!", String.format(china.getFormatStr(), "John"));
-    assertEquals("John, Ni Hao!", String.format(china.getFormatStr(true), "John"));
+    assertEquals("John, Ni Hao!", String.format(china.getFormatStr(), "John"));
     }
 
 }
