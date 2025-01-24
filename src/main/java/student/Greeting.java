@@ -22,7 +22,7 @@ public class Greeting {
      * @param localityName name of the locality
      */
     public Greeting(int localityID, String localityName) {
-        this(localityID, localityName, "Hello", "Hello", "%s, %%s!");
+        this(localityID, localityName, "Hello", "Hello", "%s, %s!");
     }
 
     /**
@@ -101,7 +101,7 @@ public class Greeting {
     public String getFormatStr(boolean asciiOnly) {
         if (asciiOnly) {
             return String.format(this.formatStr, this.asciiGreeting);
-        } else{
+        } else {
             return String.format(this.formatStr, this.unicodeGreeting);
         }
     }
