@@ -1,7 +1,7 @@
 package student;
 
 /**
- * This class is a place holder which you will fully implement based on the javadoc
+ * This class is a place holder which you will fully implement based on the javadoc.
  * https://cs5004-khoury-lionelle.github.io/hello_world/student/package-summary.html
  */
 public class Greeting {
@@ -116,6 +116,7 @@ public class Greeting {
      * Return a string representation everything.
      * @return a formatted string representation
      */
+    @Override
     public String toString() {
         return String.format("{localityID:%d, localityName:\"%s\", "
                         + "asciiGreeting:\"%s\","
