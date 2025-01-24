@@ -163,7 +163,7 @@ public class Greeter {
             // skip case 2, it is the default greeting
             case CHINA:
                 if (asciiOnly) {
-                    greeting = String.format("%s, Ni Hao!", name);
+                    greeting = String.format("Ni Hao, %s!", name);
                 } else {
                     greeting = String.format("%s, 你好!", name);
                     // note "你好!" while is allowed in java sa unicode,
@@ -185,10 +185,10 @@ public class Greeter {
      * @return the locality as a string
      */
     private String getLocalityString() {
-        if (locality < 1 || locality > localityList.size()) {
+        if (locality < 1 || locality >= localityList.size()) {
             return "USA";
         }
-        return localityList.get(locality - 1);
+        return localityList.get(locality);
     }
 
     /**
